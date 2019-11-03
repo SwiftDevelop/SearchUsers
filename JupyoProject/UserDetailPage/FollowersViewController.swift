@@ -12,19 +12,24 @@ import Alamofire
 class FollowersViewController: UIViewController {
 
     @IBOutlet weak var naviView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // 검색 탭 뷰
     lazy var listView: ListView = {
         let view = Bundle.main.loadNibNamed("ListView", owner: self, options: nil)?.first as! ListView
         view.tab = .search
-        view.resultLabel.text = "팔로워가 없습니다"
+        view.resultLabel.text = "There is no data"
         return view
     }()
     
+    var titleString = String()
     var followerUrl = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Title
+        titleLabel.text = titleString
         
         // ListView
         listView.translatesAutoresizingMaskIntoConstraints = false

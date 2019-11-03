@@ -41,6 +41,9 @@
                                             <constraint firstAttribute="width" constant="52" id="sXW-qm-p65"/>
                                         </constraints>
                                         <state key="normal" image="LikeOff"/>
+                                        <connections>
+                                            <action selector="likeButtonAction:" destination="448-4T-gdU" eventType="touchUpInside" id="dfr-t2-y7X"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -109,6 +112,9 @@
                                                     <state key="normal" title="Follow">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="followButtonAction:" destination="448-4T-gdU" eventType="touchUpInside" id="ZZe-if-OTS"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -206,6 +212,7 @@
                     </view>
                     <connections>
                         <outlet property="naviView" destination="PsL-V4-8R7" id="9nk-F4-DDz"/>
+                        <outlet property="titleLabel" destination="A07-91-4NC" id="vmQ-lk-XON"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI1-1A-7Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

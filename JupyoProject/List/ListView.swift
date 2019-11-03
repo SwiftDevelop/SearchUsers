@@ -62,7 +62,7 @@ extension ListView: ListViewCellDelegate {
         
         // 데이터 추가 및 표시
         guard data.count != 0 else { return }
-        listData += data
+        listData = data
         tableView.isHidden = listData.count == 0 ? true : false
         tableView.reloadData()
     }
@@ -76,8 +76,13 @@ extension ListView: ListViewCellDelegate {
     
     // 데이터 리로드
     @objc func refreshListData(_ refresh: UIRefreshControl) {
-        resetListData()
-        delegate?.refreshData()
+        if tab == .search {
+            delegate?.refreshData()
+        } else {
+            guard let likeUser = AppUserDefaults().get(.likeUser) as? [[String: Any]] else { return }
+            getListData(likeUser)
+        }
+        
     }
     
     // 좋아요 선택 시 선택 여부 표시를 위해 데이터 값 추가 및 변경
@@ -90,7 +95,7 @@ extension ListView: ListViewCellDelegate {
             // 검색 탭
             
             // 이전 좋아요 저장 데이터 불러오기
-            var favorUser = AppUserDefaults().get(.likeUser) as? [[String: Any]] ?? [[String: Any]]()
+            var likeUser = AppUserDefaults().get(.likeUser) as? [[String: Any]] ?? [[String: Any]]()
             
             // 좋아요 선택 해제
             if let like = listData[indexPath.row]["like"] as? String, like == "Y" {
@@ -98,9 +103,9 @@ extension ListView: ListViewCellDelegate {
                 listData[indexPath.row]["like"] = "N"
                 
                 // 저장 된 사용자 중에 해당 데이터 제거
-                for i in 0..<favorUser.count {
-                    if favorUser[i]["login"] as? String == listData[indexPath.row]["login"] as? String {
-                        favorUser.remove(at: i)
+                for i in 0..<likeUser.count {
+                    if likeUser[i]["login"] as? String == listData[indexPath.row]["login"] as? String {
+                        likeUser.remove(at: i)
                         break
                     }
                 }
@@ -111,18 +116,18 @@ extension ListView: ListViewCellDelegate {
                 listData[indexPath.row]["like"] = "Y"
                 
                 // 중복 이름 확인
-                let checkValue = favorUser.filter {
+                let checkValue = likeUser.filter {
                     $0["login"] as? String == listData[indexPath.row]["login"] as? String
                 }
                 
                 // 중복 이름이 없을 경우 사용자 추가
                 if checkValue.count == 0 {
-                    favorUser.append(listData[indexPath.row])
+                    likeUser.append(listData[indexPath.row])
                 }
             }
             
             // 좋아요 사용자 데이터 저장
-            AppUserDefaults().set(favorUser, key: .likeUser)
+            AppUserDefaults().set(likeUser, key: .likeUser)
             
         } else {
             // 좋아요 탭
@@ -173,7 +178,11 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         
         // Data
-        let data = listData[indexPath.row]
+        var data = listData[indexPath.row]
+        if let owner = listData[indexPath.row]["owner"] as? [String: Any] {
+            data = owner
+            cell.likeButton.isHidden = true
+        }
         
         // Image
         cell.userImageView.setImage(data["avatar_url"] as? String)
@@ -182,8 +191,11 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
         cell.userNameLabel.text = data["login"] as? String
         
         // Score
-        let score = data["score"] as? Double ?? 0.0
-        cell.userScoreLabel.text = "Score: \(score)"
+        if let score = data["score"] as? Double {
+            cell.userScoreLabel.text = "Score: \(score)"
+        } else {
+            cell.userScoreLabel.isHidden = true
+        }
         
         // Like
         if let like = data["like"] as? String, like == "Y" {
@@ -205,7 +217,6 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "UserDetailViewController") as? UserDetailViewController else { fatalError() }
-        guard let url = listData[indexPath.row]["url"] as? String else { return }
         vc.userData = listData[indexPath.row]
         delegate?.push(vc)
     }

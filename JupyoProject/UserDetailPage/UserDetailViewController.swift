@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SafariServices
 
 class UserDetailViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class UserDetailViewController: UIViewController {
         if let like = userData["like"] as? String {
             let img = like == "Y" ? UIImage(named: "LikeOn") : UIImage(named: "LikeOff")
             userLikeButton.setImage(img, for: .normal)
+            userLikeButton.isSelected = true
         }
         
         // 사용자 상세정보
@@ -35,6 +37,61 @@ class UserDetailViewController: UIViewController {
     
     @IBAction func backButtonAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func likeButtonAction(_ sender: UIButton) {
+        guard var likeUser = AppUserDefaults().get(.likeUser) as? [[String: Any]] else { return }
+        
+        if sender.isSelected {
+            // 좋아요 선택 되어 있을 경우, 선택 해제
+            
+            sender.isSelected = false
+            sender.setImage(UIImage(named: "LikeOff"), for: .normal)
+            
+            // 사용자 데이터 삭제
+            for i in 0..<likeUser.count {
+                if likeUser[i]["login"] as? String == userData["login"] as? String {
+                    likeUser.remove(at: i)
+                    break
+                }
+            }
+            
+            
+        } else {
+            // 좋아요 선택 해제 되어 있을 경우, 선택
+            
+            sender.isSelected = true
+            sender.setImage(UIImage(named: "LikeOn"), for: .normal)
+            
+            // 중복 이름 확인
+            let checkValue = likeUser.filter {
+                $0["login"] as? String == userData["login"] as? String
+            }
+            
+            // 리스트에서 좋아요 선택 확인을 위해 값 추가
+            userData["like"] = "Y"
+            
+            // 중복 이름이 없을 경우 사용자 추가
+            if checkValue.count == 0 {
+                likeUser.append(userData)
+            }
+        }
+        
+        // 데이터 저장
+        AppUserDefaults().set(likeUser, key: .likeUser)
+    }
+    
+    @IBAction func followButtonAction(_ sender: UIButton) {
+        if sender.tag == 0 {
+            // 팔로우
+            sender.tag = 1
+            sender.backgroundColor = .blue
+            
+        } else {
+            // 팔로우 해제
+            sender.tag = 0
+            sender.backgroundColor = .lightGray
+        }
     }
     
 }
@@ -86,6 +143,12 @@ extension UserDetailViewController {
                 // Blog
                 if let blog = json["blog"] as? String {
                     let dic = ["title": "Blog", "sub": blog]
+                    self.userInfoList.append(dic)
+                }
+                
+                // Git
+                if let git = json["html_url"] as? String {
+                    let dic = ["title": "Git", "sub": git]
                     self.userInfoList.append(dic)
                 }
                 
@@ -166,11 +229,28 @@ extension UserDetailViewController: UITableViewDelegate, UITableViewDataSource {
         guard let title = userInfoList[indexPath.row]["title"] as? String else { return }
         let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
         switch title {
-        case "Followers":
+        case "Followers", "Subscriptions": // 팔로워 리스트
             guard let vc = storyboard.instantiateViewController(withIdentifier: "FollowersViewController") as? FollowersViewController else { fatalError() }
-            guard let url = userData["followers_url"] as? String else { return }
-            vc.followerUrl = url
+            
+            // Title
+            vc.titleString = title
+            
+            // URL
+            if title == "Followers" {
+                guard let url = userData["followers_url"] as? String else { return }
+                vc.followerUrl = url
+            } else {
+                guard let url = userData["subscriptions_url"] as? String else { return }
+                vc.followerUrl = url
+            }
+            
             navigationController?.pushViewController(vc, animated: true)
+            
+        case "Blog", "Git": // 사용자 블로그
+            guard let address = userInfoList[indexPath.row]["sub"] as? String else { return }
+            guard let url = URL(string: address) else { return }
+            let safariView = SFSafariViewController(url: url)
+            present(safariView, animated: true, completion: nil)
             
         default:
             break
