@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1733D882EA29A4B943968F9D /* Pods_JupyoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3553997536D494AEFC82D3 /* Pods_JupyoProject.framework */; };
+		8B004215236562D60012BEB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B004214236562D60012BEB0 /* AppDelegate.swift */; };
+		8B004217236562D60012BEB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B004216236562D60012BEB0 /* SceneDelegate.swift */; };
+		8B004219236562D60012BEB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B004218236562D60012BEB0 /* ViewController.swift */; };
+		8B00421C236562D60012BEB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B00421A236562D60012BEB0 /* Main.storyboard */; };
+		8B00421F236562D60012BEB0 /* JupyoProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B00421D236562D60012BEB0 /* JupyoProject.xcdatamodeld */; };
+		8B004221236562D80012BEB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B004220236562D80012BEB0 /* Assets.xcassets */; };
+		8B004224236562D80012BEB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B004222236562D80012BEB0 /* LaunchScreen.storyboard */; };
+		8B00422D23657B9A0012BEB0 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B00422C23657B9A0012BEB0 /* ListView.xib */; };
+		8B00423123657D620012BEB0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00423023657D620012BEB0 /* ListView.swift */; };
+		8B004233236594630012BEB0 /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B004232236594630012BEB0 /* ListViewCell.xib */; };
+		8B56144D236A9C4B00DAAB96 /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56144C236A9C4B00DAAB96 /* AppUserDefaults.swift */; };
+		8BE0DD1B236DF3EC00F4039B /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0DD1A236DF3EC00F4039B /* UserDetail.storyboard */; };
+		8BE0DD1D236DF3FB00F4039B /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0DD1C236DF3FB00F4039B /* UserDetailViewController.swift */; };
+		8BE0DD20236DFA8400F4039B /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0DD1F236DFA8400F4039B /* CustomImageView.swift */; };
+		8BE0DD22236DFBC200F4039B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0DD21236DFBC200F4039B /* CustomView.swift */; };
+		8BE0DD24236EA9F300F4039B /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0DD23236EA9F300F4039B /* FollowersViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08A9FF0F1A159F8EEC821F20 /* Pods-JupyoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JupyoProject.release.xcconfig"; path = "Target Support Files/Pods-JupyoProject/Pods-JupyoProject.release.xcconfig"; sourceTree = "<group>"; };
+		0E5658BCD98FE49D004B2FDB /* Pods-JupyoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JupyoProject.debug.xcconfig"; path = "Target Support Files/Pods-JupyoProject/Pods-JupyoProject.debug.xcconfig"; sourceTree = "<group>"; };
+		8B004211236562D60012BEB0 /* JupyoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JupyoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B004214236562D60012BEB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B004216236562D60012BEB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8B004218236562D60012BEB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B00421B236562D60012BEB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B00421E236562D60012BEB0 /* JupyoProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JupyoProject.xcdatamodel; sourceTree = "<group>"; };
+		8B004220236562D80012BEB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B004223236562D80012BEB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B004225236562D80012BEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B00422C23657B9A0012BEB0 /* ListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListView.xib; sourceTree = "<group>"; };
+		8B00423023657D620012BEB0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		8B004232236594630012BEB0 /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
+		8B56144C236A9C4B00DAAB96 /* AppUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
+		8BE0DD1A236DF3EC00F4039B /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		8BE0DD1C236DF3FB00F4039B /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		8BE0DD1F236DFA8400F4039B /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		8BE0DD21236DFBC200F4039B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		8BE0DD23236EA9F300F4039B /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+		8F3553997536D494AEFC82D3 /* Pods_JupyoProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JupyoProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B00420E236562D60012BEB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1733D882EA29A4B943968F9D /* Pods_JupyoProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D03D406A186219EC4CCE8A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F3553997536D494AEFC82D3 /* Pods_JupyoProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82FBBB50E819A7F18D9A71B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E5658BCD98FE49D004B2FDB /* Pods-JupyoProject.debug.xcconfig */,
+				08A9FF0F1A159F8EEC821F20 /* Pods-JupyoProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B004208236562D60012BEB0 = {
+			isa = PBXGroup;
+			children = (
+				8B004213236562D60012BEB0 /* JupyoProject */,
+				8B004212236562D60012BEB0 /* Products */,
+				82FBBB50E819A7F18D9A71B3 /* Pods */,
+				1D03D406A186219EC4CCE8A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8B004212236562D60012BEB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B004211236562D60012BEB0 /* JupyoProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B004213236562D60012BEB0 /* JupyoProject */ = {
+			isa = PBXGroup;
+			children = (
+				8BE0DD1E236DFA7200F4039B /* Custom */,
+				8BE0DD19236DF3D000F4039B /* UserDetailPage */,
+				8B00422B23657B8A0012BEB0 /* List */,
+				8B004214236562D60012BEB0 /* AppDelegate.swift */,
+				8B56144C236A9C4B00DAAB96 /* AppUserDefaults.swift */,
+				8B004216236562D60012BEB0 /* SceneDelegate.swift */,
+				8B004218236562D60012BEB0 /* ViewController.swift */,
+				8B00421A236562D60012BEB0 /* Main.storyboard */,
+				8B004220236562D80012BEB0 /* Assets.xcassets */,
+				8B004222236562D80012BEB0 /* LaunchScreen.storyboard */,
+				8B004225236562D80012BEB0 /* Info.plist */,
+				8B00421D236562D60012BEB0 /* JupyoProject.xcdatamodeld */,
+			);
+			path = JupyoProject;
+			sourceTree = "<group>";
+		};
+		8B00422B23657B8A0012BEB0 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8B00422C23657B9A0012BEB0 /* ListView.xib */,
+				8B004232236594630012BEB0 /* ListViewCell.xib */,
+				8B00423023657D620012BEB0 /* ListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		8BE0DD19236DF3D000F4039B /* UserDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				8BE0DD1A236DF3EC00F4039B /* UserDetail.storyboard */,
+				8BE0DD1C236DF3FB00F4039B /* UserDetailViewController.swift */,
+				8BE0DD23236EA9F300F4039B /* FollowersViewController.swift */,
+			);
+			path = UserDetailPage;
+			sourceTree = "<group>";
+		};
+		8BE0DD1E236DFA7200F4039B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				8BE0DD1F236DFA8400F4039B /* CustomImageView.swift */,
+				8BE0DD21236DFBC200F4039B /* CustomView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B004210236562D60012BEB0 /* JupyoProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B004228236562D80012BEB0 /* Build configuration list for PBXNativeTarget "JupyoProject" */;
+			buildPhases = (
+				16829F7DFD9C0B85B4E3C2BB /* [CP] Check Pods Manifest.lock */,
+				8B00420D236562D60012BEB0 /* Sources */,
+				8B00420E236562D60012BEB0 /* Frameworks */,
+				8B00420F236562D60012BEB0 /* Resources */,
+				1060273D253C2B452D7A60B6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JupyoProject;
+			productName = JupyoProject;
+			productReference = 8B004211236562D60012BEB0 /* JupyoProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B004209236562D60012BEB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = JangJupyo;
+				TargetAttributes = {
+					8B004210236562D60012BEB0 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 8B00420C236562D60012BEB0 /* Build configuration list for PBXProject "JupyoProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B004208236562D60012BEB0;
+			productRefGroup = 8B004212236562D60012BEB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B004210236562D60012BEB0 /* JupyoProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B00420F236562D60012BEB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B00422D23657B9A0012BEB0 /* ListView.xib in Resources */,
+				8B004224236562D80012BEB0 /* LaunchScreen.storyboard in Resources */,
+				8BE0DD1B236DF3EC00F4039B /* UserDetail.storyboard in Resources */,
+				8B004233236594630012BEB0 /* ListViewCell.xib in Resources */,
+				8B004221236562D80012BEB0 /* Assets.xcassets in Resources */,
+				8B00421C236562D60012BEB0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1060273D253C2B452D7A60B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JupyoProject/Pods-JupyoProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JupyoProject/Pods-JupyoProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JupyoProject/Pods-JupyoProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16829F7DFD9C0B85B4E3C2BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JupyoProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B00420D236562D60012BEB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BE0DD1D236DF3FB00F4039B /* UserDetailViewController.swift in Sources */,
+				8BE0DD20236DFA8400F4039B /* CustomImageView.swift in Sources */,
+				8BE0DD24236EA9F300F4039B /* FollowersViewController.swift in Sources */,
+				8B004219236562D60012BEB0 /* ViewController.swift in Sources */,
+				8BE0DD22236DFBC200F4039B /* CustomView.swift in Sources */,
+				8B004215236562D60012BEB0 /* AppDelegate.swift in Sources */,
+				8B56144D236A9C4B00DAAB96 /* AppUserDefaults.swift in Sources */,
+				8B00423123657D620012BEB0 /* ListView.swift in Sources */,
+				8B004217236562D60012BEB0 /* SceneDelegate.swift in Sources */,
+				8B00421F236562D60012BEB0 /* JupyoProject.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B00421A236562D60012BEB0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B00421B236562D60012BEB0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B004222236562D80012BEB0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B004223236562D80012BEB0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B004226236562D80012BEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B004227236562D80012BEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B004229236562D80012BEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E5658BCD98FE49D004B2FDB /* Pods-JupyoProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R5N7WM9GUQ;
+				INFOPLIST_FILE = JupyoProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JangJupyo.JupyoProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B00422A236562D80012BEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08A9FF0F1A159F8EEC821F20 /* Pods-JupyoProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R5N7WM9GUQ;
+				INFOPLIST_FILE = JupyoProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JangJupyo.JupyoProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B00420C236562D60012BEB0 /* Build configuration list for PBXProject "JupyoProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B004226236562D80012BEB0 /* Debug */,
+				8B004227236562D80012BEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B004228236562D80012BEB0 /* Build configuration list for PBXNativeTarget "JupyoProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B004229236562D80012BEB0 /* Debug */,
+				8B00422A236562D80012BEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B00421D236562D60012BEB0 /* JupyoProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B00421E236562D60012BEB0 /* JupyoProject.xcdatamodel */,
+			);
+			currentVersion = 8B00421E236562D60012BEB0 /* JupyoProject.xcdatamodel */;
+			path = JupyoProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8B004209236562D60012BEB0 /* Project object */;
+}
